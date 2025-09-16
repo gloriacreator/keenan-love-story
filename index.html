@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Keenan weds Gloria">
+    <meta property="og:description" content="Join us on 25.10.25 to celebrate our special day!">
+    <meta property="og:image" content="https://gloriacreator.github.io/our-love-story/thumbnail.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Keenan weds Gloria">
+    <meta name="twitter:description" content="Join us on 25.10.25 to celebrate our special day!">
+    <meta name="twitter:image" content="https://gloriacreator.github.io/our-love-story/thumbnail.jpg">
+
+    <title>Keenan weds Gloria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* General Design Guidelines */
+        :root {
+            --font-cursive: 'Great Vibes', cursive;
+            --font-serif: 'Playfair Display', serif;
+            --color-dark-blue: #0a2d4d;
+            --color-sandy-beige: #e3d4b7;
+            --color-white: #ffffff;
+            --color-text: #333333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            margin: 0;
+            background-image: url('ghibli image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--color-text);
+        }
+
+        /* All sections are single-scroll, separated by containers */
+        .container {
+            max-width: 768px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: var(--font-cursive);
+            font-size: 3rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--color-dark-blue);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            color: var(--color-sandy-beige);
+            margin-bottom: 1rem;
+        }
+
+        /* 2. Header */
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: var(--color-white);
+            /* Overlay for readability */
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        header h1 {
+            font-family: var(--font-cursive);
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+            letter-spacing: 2.5px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 60px;
+            text-align: center;
+            color: var(--color-white);
+            font-size: 1.2rem;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-down i {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        /* 3. Narration Section */
+        #story-layout {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Styling for the new image cliparts */
+        .story-image {
+            width: 100px; /* Adjust size as needed */
+            height: 100px;
+            border-radius: 0;
+            object-fit: cover;
+            border: 3px solid transparent;
+            transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+        }
+
+        .glowing {
+            box-shadow: 0 0 15px 5px var(--color-sandy-beige);
+            border-color: var(--color-sandy-beige);
+        }
+
+        /* Play button wrapper */
+        .play-wrapper {
+            text-align: center;
+        }
+
+        #play-button {
+            background-color: var(--color-dark-blue);
+            color: var(--color-white);
+            border: none;
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: relative;
+        }
+
+        #play-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Pulsing glow effect */
+        #play-button::after {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            border-radius: 50%;
+            border: 2px solid var(--color-sandy-beige);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            70% { transform: scale(1.3); opacity: 0; }
+            100% { transform: scale(0.9); opacity: 0; }
+        }
+
+        /* Play text below button */
+        .play-text {
+            margin-top: 12px;
+            font-size: 1rem;
+            font-family: var(--font-serif);
+            color: var(--color-dark-blue);
+            font-weight: bold;
+        }
+
+        /* Hidden fade out */
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        #dialogue-display {
+            min-height: 100px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            transition: opacity 0.5s ease-in-out;
+            margin-top: 1rem;
+        }
+
+        .fade-in { opacity: 1; }
+        .fade-out { opacity: 0; }
+
+        /* Anchor image */
+        #anchor-image {
+            width: 80px;
+            height: 80px;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            display: none; /* hidden initially */
+            margin: 0 20px;
+            transition: opacity 1s ease;
+        }
+
+        #anchor-image.show {
+            display: inline-block;
+            opacity: 1;
+        }
+
+        /* 4, 5, 6. Detail Sections (Nuptials, Reception, Dress) */
+        .details p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin: 0.5rem 0;
+        }
+        .details strong {
+            color: var(--color-dark-blue);
+        }
+
+        /* 7. RSVP Section */
+        #rsvp-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        #rsvp-form button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--color-dark-blue);
+            color: var(--color-white);
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #rsvp-form button:hover {
+            background-color: #0d426e;
+        }
+
+        #success-message {
+            display: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Keenan weds Gloria</h1>
+        <p>25.10.25</p>
+        <div class="scroll-down">
+            <span>Please scroll down</span>
+            <i class="fa-solid fa-angles-down"></i>
+        </div>
+    </header>
+
+    <main>
+        <section id="story" class="container">
+            <h2>Our Love Story</h2>
+            <div id="story-layout">
+                <img src="girl.png" alt="Gloria" class="story-image" id="girl-image">
+                
+                <div class="play-wrapper" id="play-wrapper">
+                    <button id="play-button"><i class="fa-solid fa-play"></i></button>
+                    <p class="play-text">Press to play the story</p>
+                </div>
+
+                <img src="anchor.png" alt="Anchor" id="anchor-image">
+                
+                <img src="boy.png" alt="Keenan" class="story-image" id="boy-image">
+            </div>
+            <div id="dialogue-display" class="fade-out"></div>
+        </section>
+
+        <section id="nuptials" class="container details">
+            <h2>Nuptials</h2>
+            <div class="icon"><i class="fa-solid fa-church"></i></div>
+            <p><strong>Venue:</strong> Holy Family Church, Andheri East</p>
+            <p><strong>Timing:</strong> 4:30 PM</p>
+            <p><strong>Google directions:</strong> 
+                <a href="https://maps.app.goo.gl/b4YW4KF1zbCsExmw9" target="_blank" rel="noopener noreferrer">
+                    Click here
+                </a>
+            </p>
+        </section>
+
+        <section id="reception" class="container details">
+            <h2>Reception</h2>
+            <div class="icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+            <p><strong>Venue:</strong> Aurika by Lemon Tree Hotels, Mumbai International Airport, Andheri East</p>
+            <p><strong>Timing:</strong> 7:00 PM</p>
+            <p><strong>Google directions:</strong> 
+                <a href="https://maps.app.goo.gl/cXzK3Fs4bUL1w97MA" target="_blank" rel="noopener noreferrer">
+                    Click here
+                </a>
+            </p>
+        </section>
+
+        <section id="rsvp" class="container">
+            <h2>RSVP</h2>
+            <form id="rsvp-form" name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="number" name="GuestCount" placeholder="Guest Count" min="1" required>
+                <button type="submit">Confirm Attendance</button>
+            </form>
+            <p id="success-message">Thank you for confirming!</p>
+        </section>
+
+    </main>
+
+    <script>
+        // 3. Narration Section Functionality
+        const playButton = document.getElementById('play-button');
+        const playWrapper = document.getElementById('play-wrapper'); // wrapper containing button + text
+        const dialogueDisplay = document.getElementById('dialogue-display');
+        const girlImage = document.getElementById('girl-image');
+        const boyImage = document.getElementById('boy-image');
+        const anchorImage = document.getElementById('anchor-image'); // anchor reference
+
+        const dialogues = [
+            { speaker: 'girl', text: 'I walked along the shore, <br>lost in thought, <br>                not knowing love was walking towards me.' },
+            { speaker: 'boy', text: 'From the other end of the beach,<br>I saw her—<br>and the world stood still.' },
+            { speaker: 'girl', text: 'Each step brought us closer,<br>like the sea was guiding us.' },
+            { speaker: 'boy', text: 'When our eyes met,<br>I knew—this was the start off ---<br><strong>forever.</strong>' },
+            { speaker: 'final', text: 'Now, hand in hand, <br>we walk into a new chapter.<br><strong>   Join us as we say “I do.”</strong>' }
+        ];
+
+        let currentDialogueIndex = 0;
+
+        playButton.addEventListener('click', () => {
+            // Hide button + text by fading it out
+            playWrapper.classList.add('hidden');
+
+            // Start the story narration immediately
+            dialogueDisplay.classList.remove('fade-out');
+            dialogueDisplay.classList.add('fade-in');
+            playNextDialogue();
+
+            // After the fade-out animation (500ms), remove the play button from the layout 
+            // and show the anchor image in its place.
+            setTimeout(() => {
+                playWrapper.style.display = 'none'; // This line is the main fix
+                anchorImage.classList.add('show');
+            }, 500); // This delay should match your CSS transition duration
+        });
+
+        function removeGlow() {
+            girlImage.classList.remove('glowing');
+            boyImage.classList.remove('glowing');
+        }
+
+        function playNextDialogue() {
+            if (currentDialogueIndex < dialogues.length) {
+                const currentDialogue = dialogues[currentDialogueIndex];
+                
+                removeGlow(); // Clear previous glow
+
+                if (currentDialogue.speaker === 'girl') {
+                    girlImage.classList.add('glowing');
+                } else if (currentDialogue.speaker === 'boy') {
+                    boyImage.classList.add('glowing');
+                } else if (currentDialogue.speaker === 'final') {
+                    girlImage.classList.add('glowing');
+                    boyImage.classList.add('glowing');
+                }
+                
+                dialogueDisplay.classList.remove('fade-in');
+                dialogueDisplay.classList.add('fade-out');
+
+                setTimeout(() => {
+                    dialogueDisplay.innerHTML = currentDialogue.text;
+                    dialogueDisplay.classList.remove('fade-out');
+                    dialogueDisplay.classList.add('fade-in');
+                }, 500);
+
+                currentDialogueIndex++;
+                setTimeout(playNextDialogue, 8000); // each dialogue lasts 5 seconds
+            } else {
+                setTimeout(removeGlow, 2000);
+            }
+        }
+
+        // 7. RSVP Section Functionality
+        const form = document.getElementById('rsvp-form');
+        const successMessage = document.getElementById('success-message');
+
+        /*
+        ------------------------------------------------------------------------------------------
+        INSTRUCTIONS FOR GOOGLE SHEETS INTEGRATION (To store responses in an Excel-like file)
+        ------------------------------------------------------------------------------------------
+        1. Create a new Google Sheet.
+        2. In the sheet, go to Extensions > Apps Script.
+        3. Paste the following code into the script editor and save it:
+            ...
+        ------------------------------------------------------------------------------------------
+        */
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzSFGsVA3XJGmdo5d7yyTj8DP90UP-HGFDHKO7a4JK_lWpLnWPM3HlPCvaa0nypUIfMPw/exec'; // <-- PASTE YOUR URL HERE
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const submitButton = form.querySelector('button');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    console.log('Success!', response);
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert(`Error: ${error.message}`);
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Confirm Attendance';
+                });
+        });
+    </script>
+
+</body>
+</html>

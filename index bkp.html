@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Open Graph Meta Tags for Thumbnail -->
+    <meta property="og:title" content="Keenan weds Gloria">
+    <meta property="og:description" content="Join us on 25.10.25 to celebrate our special day!">
+    <meta property="og:image" content="https://gloriacreator.github.io/our-love-story/thumbnail.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- For Twitter (optional) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Keenan weds Gloria">
+    <meta name="twitter:description" content="Join us on 25.10.25 to celebrate our special day!">
+    <meta name="twitter:image" content="https://gloriacreator.github.io/our-love-story/thumbnail.jpg">
+
+    <title>Keenan weds Gloria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --font-cursive: 'Great Vibes', cursive;
+            --font-serif: 'Playfair Display', serif;
+            --color-dark-blue: #0a2d4d;
+            --color-sandy-beige: #e3d4b7;
+            --color-white: #ffffff;
+            --color-text: #333333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            margin: 0;
+            background-image: url('beach.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--color-text);
+        }
+
+        .container { 
+            max-width: 768px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: var(--font-cursive);
+            font-size: 3rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--color-dark-blue);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            color: var(--color-sandy-beige);
+            margin-bottom: 1rem;
+        }
+
+        /* ✅ HEADER FIX */
+        header {
+            position: relative;
+            min-height: 250px; /* Smaller than 100vh */
+            padding: 50px 20px;
+            text-align: center;
+            color: var(--color-white);
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: var(--font-cursive);
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        /* Remove transform pushing content up */
+        .header-content {
+            transform: none;
+        }
+
+        /* Story Section */
+        #story-layout {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 0;
+            border: 3px solid transparent;
+            transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+        }
+
+        .glowing {
+            box-shadow: 0 0 15px 5px var(--color-sandy-beige);
+            border-color: var(--color-sandy-beige);
+        }
+
+        #play-button {
+            background-color: var(--color-dark-blue);
+            color: var(--color-white);
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #play-button:hover {
+            transform: scale(1.1);
+        }
+
+        #dialogue-display {
+            min-height: 100px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            transition: opacity 0.5s ease-in-out;
+            margin-top: 1rem;
+        }
+
+        .fade-in { opacity: 1; }
+        .fade-out { opacity: 0; }
+
+        .details p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin: 0.5rem 0;
+        }
+        .details strong {
+            color: var(--color-dark-blue);
+        }
+
+        #rsvp-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        #rsvp-form button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--color-dark-blue);
+            color: var(--color-white);
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #rsvp-form button:hover {
+            background-color: #0d426e;
+        }
+
+        #success-message {
+            display: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<!-- adding header -->
+    <header>
+        <div class="header-content">
+            <h1>Keenan weds Gloria</h1>
+            <p>25.10.25</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="story" class="container">
+            <h2>Our Love Story</h2>
+            <div id="story-layout">
+                <img src="girl.png" alt="Gloria" class="story-image" id="girl-image">
+                <button id="play-button"><i class="fa-solid fa-play"></i></button>
+                <img src="boy.png" alt="Keenan" class="story-image" id="boy-image">
+            </div>
+            <div id="dialogue-display" class="fade-out"></div>
+        </section>
+
+        <section id="nuptials" class="container details">
+            <h2>Nuptials</h2>
+            <div class="icon"><i class="fa-solid fa-church"></i></div>
+            <p><strong>Venue:</strong> Holy Family Church, Andheri East</p>
+            <p><strong>Timing:</strong> 4:30 PM</p>
+            <p><strong>Google directions:</strong> 
+                <a href="https://maps.app.goo.gl/b4YW4KF1zbCsExmw9" target="_blank" rel="noopener noreferrer">
+                    Click here
+                </a>
+            </p>
+        </section>
+
+        <section id="reception" class="container details">
+            <h2>Reception</h2>
+            <div class="icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+            <p><strong>Venue:</strong> Aurika by Lemon Tree Hotels, Mumbai International Airport, Andheri East</p>
+            <p><strong>Timing:</strong> 7:00 PM</p>
+            <p><strong>Google directions:</strong> 
+                <a href="https://maps.app.goo.gl/cXzK3Fs4bUL1w97MA" target="_blank" rel="noopener noreferrer">
+                    Click here
+                </a>
+            </p>
+        </section>
+
+        <section id="rsvp" class="container">
+            <h2>RSVP</h2>
+            <form id="rsvp-form" name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="number" name="GuestCount" placeholder="Guest Count" min="1" required>
+                <button type="submit">Confirm Attendance</button>
+            </form>
+            <p id="success-message">Thank you for confirming!</p>
+        </section>
+
+    </main>
+
+    <script>
+        const playButton = document.getElementById('play-button');
+        const dialogueDisplay = document.getElementById('dialogue-display');
+        const girlImage = document.getElementById('girl-image');
+        const boyImage = document.getElementById('boy-image');
+
+        const dialogues = [
+            { speaker: 'girl', text: 'I walked along the shore, lost in thought, not knowing love was walking toward me.' },
+            { speaker: 'boy', text: 'From the other end of the beach, I saw her—and the world stood still.' },
+            { speaker: 'girl', text: 'Each step brought us closer, like the sea was guiding us.' },
+            { speaker: 'boy', text: 'When our eyes met, I knew—this was the start of forever.' },
+            { speaker: 'final', text: 'Now, hand in hand, we walk into a new chapter.<br><strong>Join us as we say “I do.”</strong>' }
+        ];
+
+        let currentDialogueIndex = 0;
+
+        playButton.addEventListener('click', () => {
+            playButton.disabled = true;
+            playButton.style.opacity = '0.7';
+            dialogueDisplay.classList.remove('fade-out');
+            dialogueDisplay.classList.add('fade-in');
+            playNextDialogue();
+        });
+
+        function removeGlow() {
+            girlImage.classList.remove('glowing');
+            boyImage.classList.remove('glowing');
+        }
+
+        function playNextDialogue() {
+            if (currentDialogueIndex < dialogues.length) {
+                const currentDialogue = dialogues[currentDialogueIndex];
+                removeGlow();
+                if (currentDialogue.speaker === 'girl') {
+                    girlImage.classList.add('glowing');
+                } else if (currentDialogue.speaker === 'boy') {
+                    boyImage.classList.add('glowing');
+                } else {
+                    girlImage.classList.add('glowing');
+                    boyImage.classList.add('glowing');
+                }
+
+                dialogueDisplay.classList.remove('fade-in');
+                dialogueDisplay.classList.add('fade-out');
+
+                setTimeout(() => {
+                    dialogueDisplay.innerHTML = currentDialogue.text;
+                    dialogueDisplay.classList.remove('fade-out');
+                    dialogueDisplay.classList.add('fade-in');
+                }, 500);
+
+                currentDialogueIndex++;
+                setTimeout(playNextDialogue, 4000);
+            } else {
+                setTimeout(removeGlow, 2000);
+            }
+        }
+
+        const form = document.getElementById('rsvp-form');
+        const successMessage = document.getElementById('success-message');
+        const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const submitButton = form.querySelector('button');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                })
+                .catch(error => {
+                    alert('An error occurred. Please try again.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Confirm Attendance';
+                });
+        });
+    </script>
+
+</body>
+</html>
